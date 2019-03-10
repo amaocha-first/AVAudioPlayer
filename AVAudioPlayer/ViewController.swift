@@ -100,7 +100,7 @@ class ViewController: UIViewController {
     func audioPlayerDif(){
 
         // 音声ファイルのパスを定義 ファイル名, 拡張子を定義
-        singleton.audioPath = Bundle.main.path(forResource: "sky", ofType: "mp3")!
+        singleton.audioPath = Bundle.main.path(forResource: "mysong", ofType: "mp3")!
         
         //ファイルが存在しない、拡張子が誤っている、などのエラーを防止するために実行テスト(try)する。
         do{

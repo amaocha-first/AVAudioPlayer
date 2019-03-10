@@ -12,12 +12,12 @@
 		9F6C38E6222C12B300D84F00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F6C38E4222C12B300D84F00 /* Main.storyboard */; };
 		9F6C38E8222C12B400D84F00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F6C38E7222C12B400D84F00 /* Assets.xcassets */; };
 		9F6C38EB222C12B400D84F00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F6C38E9222C12B400D84F00 /* LaunchScreen.storyboard */; };
-		9F6C38F3222C15CD00D84F00 /* sky.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9F6C38F2222C15CC00D84F00 /* sky.mp3 */; };
 		9F6C38F5222D582D00D84F00 /* iPhoneSE.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F6C38F4222D582D00D84F00 /* iPhoneSE.storyboard */; };
 		9F6C38F7222D586200D84F00 /* iPhone8Plus.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F6C38F6222D586200D84F00 /* iPhone8Plus.storyboard */; };
 		9F6C38F9222D588900D84F00 /* iPhoneXS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F6C38F8222D588900D84F00 /* iPhoneXS.storyboard */; };
 		9F6C38FB222D58AD00D84F00 /* iPhoneXSMAX.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F6C38FA222D58AD00D84F00 /* iPhoneXSMAX.storyboard */; };
 		CC5866722235098A001C26CC /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5866712235098A001C26CC /* InitialViewController.swift */; };
+		CC58667422353094001C26CC /* mysong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CC58667322353094001C26CC /* mysong.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,12 +28,12 @@
 		9F6C38E7222C12B400D84F00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F6C38EA222C12B400D84F00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F6C38EC222C12B400D84F00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9F6C38F2222C15CC00D84F00 /* sky.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sky.mp3; sourceTree = "<group>"; };
 		9F6C38F4222D582D00D84F00 /* iPhoneSE.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = iPhoneSE.storyboard; sourceTree = "<group>"; };
 		9F6C38F6222D586200D84F00 /* iPhone8Plus.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = iPhone8Plus.storyboard; sourceTree = "<group>"; };
 		9F6C38F8222D588900D84F00 /* iPhoneXS.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = iPhoneXS.storyboard; sourceTree = "<group>"; };
 		9F6C38FA222D58AD00D84F00 /* iPhoneXSMAX.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = iPhoneXSMAX.storyboard; sourceTree = "<group>"; };
 		CC5866712235098A001C26CC /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		CC58667322353094001C26CC /* mysong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mysong.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +66,7 @@
 		9F6C38DF222C12B300D84F00 /* AVAudioPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				9F6C38F2222C15CC00D84F00 /* sky.mp3 */,
+				CC58667322353094001C26CC /* mysong.mp3 */,
 				9F6C38E0222C12B300D84F00 /* AppDelegate.swift */,
 				CC5866712235098A001C26CC /* InitialViewController.swift */,
 				9F6C38E2222C12B300D84F00 /* ViewController.swift */,
@@ -142,7 +142,7 @@
 			files = (
 				9F6C38F7222D586200D84F00 /* iPhone8Plus.storyboard in Resources */,
 				9F6C38FB222D58AD00D84F00 /* iPhoneXSMAX.storyboard in Resources */,
-				9F6C38F3222C15CD00D84F00 /* sky.mp3 in Resources */,
+				CC58667422353094001C26CC /* mysong.mp3 in Resources */,
 				9F6C38EB222C12B400D84F00 /* LaunchScreen.storyboard in Resources */,
 				9F6C38E8222C12B400D84F00 /* Assets.xcassets in Resources */,
 				9F6C38F5222D582D00D84F00 /* iPhoneSE.storyboard in Resources */,
