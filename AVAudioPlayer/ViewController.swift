@@ -31,6 +31,7 @@ class Singleton: NSObject {
 
 class ViewController: UIViewController {
     
+    //シングルトンのインスタンス生成
     let singleton :Singleton =  Singleton.sharedInstance
     
     //再生ボタン
@@ -48,37 +49,32 @@ class ViewController: UIViewController {
         audioPlayerDif()
     }
     
-    //ボリューム
-
-    @objc func playSliderController(_ sender: UISlider) {
-        singleton.player.currentTime = TimeInterval(singleton.playSlider!.value)
-    }
-    
-    @objc func volumeController(_ sender: UISlider) {
-        singleton.player.volume = singleton.volume!.value
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //シークバーの生成
         singleton.playSlider = UISlider()
         singleton.playSlider?.frame = CGRect(x: 72, y: 415, width: 232, height: 30)
         singleton.playSlider?.addTarget(self, action: #selector(playSliderController), for: .allEvents)
         self.view.addSubview(singleton.playSlider!)
         
+        //ボリュームバーの生成
         singleton.volume = UISlider()
         singleton.volume?.frame = CGRect(x: 72, y: 147, width: 232, height: 30)
         singleton.volume?.addTarget(self, action: #selector(volumeController), for: .allEvents)
         self.view.addSubview(singleton.volume!)
         
+        //秒数ラベル（右側）
         singleton.audioDurationLabel = UILabel()
         singleton.audioDurationLabel?.frame = CGRect(x: 270, y: 452, width: 50, height: 25)
         self.view.addSubview(singleton.audioDurationLabel!)
         
+        //秒数ラベル（左側）
         singleton.audioDurationProgressLabel = UILabel()
         singleton.audioDurationProgressLabel?.frame = CGRect(x: 74, y: 452, width: 50, height: 25)
         self.view.addSubview(singleton.audioDurationProgressLabel!)
         
+        //シングルトンのタイマーが生成されていないとき（初回呼び出し時）
         if singleton.sliderTimer == nil {
             //AvAudioPlayer呼び出し
             audioPlayerDif()
@@ -89,7 +85,9 @@ class ViewController: UIViewController {
             //初期値設定
             singleton.audioDurationProgressLabel!.text = "00:00"
             singleton.volume?.value = (singleton.volume?.maximumValue)! / 2
+            
         } else {
+            //2回目以降の呼び出しのとき
             singleton.playSlider!.maximumValue = Float(singleton.player.duration)
             setDurationTitle()
             singleton.volume?.value = singleton.volumeLastValue!
@@ -113,15 +111,24 @@ class ViewController: UIViewController {
             try singleton.player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: singleton.audioPath!))
 
             singleton.duration = floor(Double(singleton.audioFile!.length) / singleton.sampleRate!)
-
+            //音源ファイルの全体の長さを取得して表示
             setDurationTitle()
-
             //スライダーの最大値と音楽ファイルの長さを同期させる
             singleton.playSlider!.maximumValue = Float(singleton.player.duration)
 
         }catch{
             print("error")
         }
+    }
+    
+    //シークバーを移動させたとき
+    @objc func playSliderController(_ sender: UISlider) {
+        singleton.player.currentTime = TimeInterval(singleton.playSlider!.value)
+    }
+    
+    //ボリュームコントローラーを移動させたとき
+    @objc func volumeController(_ sender: UISlider) {
+        singleton.player.volume = singleton.volume!.value
     }
     
     //スライドバーを音楽ファイルの現在時間の位置にする
@@ -143,12 +150,14 @@ class ViewController: UIViewController {
         print(singleton.player.currentTime)
     }
     
+    //音源ファイルの全体の長さを取得して表示
     func setDurationTitle() {
         singleton.maxMin = floor(singleton.duration! / 60)
         singleton.maxSec = singleton.duration! - (singleton.maxMin! * 60)
         singleton.audioDurationLabel?.text = "\(Int(singleton.maxMin!)):\(Int(singleton.maxSec!))"
     }
     
+    //このviewが消えるときのボリュームの値をvolumeLastValueに入れておく
     override func viewWillDisappear(_ animated: Bool) {
         singleton.volumeLastValue = singleton.volume?.value
     }
